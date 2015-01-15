@@ -28,6 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1BF8A
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GitPocket\GitPocket.Shared\GitPocket.Shared.projitems*{b74b5dcd-2543-4226-9345-3360aa4f8f34}*SharedItemsImports = 4
 		GitPocket\GitPocket.Shared\GitPocket.Shared.projitems*{966336cb-c42f-4386-bc93-89cd89f21c54}*SharedItemsImports = 13
 		GitPocket\GitPocket.Shared\GitPocket.Shared.projitems*{6f8ec460-3bae-4668-8748-430520ddc900}*SharedItemsImports = 4
 	EndGlobalSection

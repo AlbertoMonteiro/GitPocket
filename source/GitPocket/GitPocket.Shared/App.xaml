@@ -1,7 +1,5 @@
-﻿<Application
-    x:Class="GitPocket.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:GitPocket">
-
+<Application x:Class="GitPocket.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:GitPocket">
+  <Application.Resources>
+    <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:GitPocket.ViewModel" />
+  </Application.Resources>
 </Application>

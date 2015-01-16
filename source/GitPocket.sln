@@ -19,13 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{ADD484FD-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitPocket.Test", "GitPocket.Test\GitPocket.Test.csproj", "{F5D58F3C-E3BB-46DA-8DA9-5DB625E40E43}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1BF8A63-5893-40AD-87F0-37075476F2E1}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		GitPocket\GitPocket.Shared\GitPocket.Shared.projitems*{b74b5dcd-2543-4226-9345-3360aa4f8f34}*SharedItemsImports = 4

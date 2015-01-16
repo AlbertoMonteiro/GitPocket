@@ -145,7 +145,8 @@
   <Import Project="..\GitPocket.Shared\GitPocket.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"$(SolutionDir)..\tools\ResourceAutomater\ResourceAutomation\bin\Debug\ResourceAutomation.exe" $(ProjectDir)..\GitPocket.Shared\Strings\</PreBuildEvent>
+    <PreBuildEvent>cd "$(SolutionDir)..\tools\ResourceAutomater\ResourceAutomation\bin\Debug"
+ResourceAutomation.exe "$(ProjectDir)\..\GitPocket.Shared\Strings"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

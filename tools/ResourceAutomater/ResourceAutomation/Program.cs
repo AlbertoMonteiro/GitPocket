@@ -25,7 +25,7 @@ namespace ResourceAutomation
                 .ToList()
                 .ForEach(root => serializer.Serialize(root.WithNewDatas(enResource.Datas), root.Path));
             
-            Console.WriteLine("Done");
+            Console.WriteLine("Resources fixed");
         }
     }
 }

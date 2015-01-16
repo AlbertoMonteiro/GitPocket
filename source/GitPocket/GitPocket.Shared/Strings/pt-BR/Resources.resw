@@ -120,7 +120,19 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>GitPocket</value>
   </data>
-  <data name="Sample.Text" xml:space="preserve">
-    <value>Ola</value>
+  <data name="LoginIn.Text" xml:space="preserve">
+    <value>Entrando</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>senha</value>
+  </data>
+  <data name="SignIn.Text" xml:space="preserve">
+    <value>faça login no GitHub</value>
+  </data>
+  <data name="SignInButton.Content" xml:space="preserve">
+    <value>entrar</value>
+  </data>
+  <data name="UserNameEmail.Text" xml:space="preserve">
+    <value>usuário ou email</value>
   </data>
 </root>

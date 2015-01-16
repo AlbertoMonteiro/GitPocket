@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Navigation;
+﻿using System;
+using Windows.UI.ViewManagement;
+using Windows.UI.Xaml.Navigation;
 
 namespace GitPocket
 {
@@ -27,6 +29,13 @@ namespace GitPocket
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+        }
+
+        private async void Page_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            StatusBar statusBar = StatusBar.GetForCurrentView();
+
+            await statusBar.HideAsync();
         }
     }
 }

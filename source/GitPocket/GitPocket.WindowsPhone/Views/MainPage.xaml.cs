@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Navigation;
 
@@ -33,9 +33,11 @@ namespace GitPocket
 
         private async void Page_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+#if WINDOWS_PHONE_APP
             StatusBar statusBar = StatusBar.GetForCurrentView();
 
-            await statusBar.HideAsync();
+            await statusBar.HideAsync(); 
+#endif
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GitPocket.Business
             roamingSettings = ApplicationData.Current.RoamingSettings; // how we should store the login data
         }
 
-        public string Username { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
 
         public bool IsAuthenticated
@@ -32,16 +32,16 @@ namespace GitPocket.Business
         /// <summary>
         /// Tries to authenticate and save the email/password in roaming settings storage
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="email"></param>
         /// <param name="password"></param>
-        public void Login(string username, string password)
+        public void Login(string email, string password)
         {
-            Username = username;
+            Email = email;
             Password = password;
 
             // Log the user in then store the login data if successful
 
-            roamingSettings.Values["username"] = username;
+            roamingSettings.Values["email"] = email;
             roamingSettings.Values["password"] = password;
 
             IsAuthenticated = true;
@@ -52,7 +52,7 @@ namespace GitPocket.Business
         /// </summary>
         public void Logout()
         {
-            roamingSettings.Values.Remove("username");
+            roamingSettings.Values.Remove("email");
             roamingSettings.Values.Remove("password");
 
             IsAuthenticated = false;

@@ -123,16 +123,22 @@
   <data name="LoginIn.Text" xml:space="preserve">
     <value>Login In</value>
   </data>
-  <data name="Password.Text" xml:space="preserve">
+  <data name="PasswordHeader.Header" xml:space="preserve">
     <value>password</value>
   </data>
-  <data name="SignIn.Text" xml:space="preserve">
-    <value>sign in with GitHub</value>
-  </data>
-  <data name="SignInButton.Content" xml:space="preserve">
+  <data name="SignInButtonContent.Content" xml:space="preserve">
     <value>sign in</value>
   </data>
-  <data name="UserNameEmail.Text" xml:space="preserve">
+  <data name="SignInButtonText.Text" xml:space="preserve">
+    <value>sign in</value>
+  </data>
+  <data name="SignInHeader.Header" xml:space="preserve">
+    <value>sign in with GitHub</value>
+  </data>
+  <data name="SignInText.Text" xml:space="preserve">
+    <value>sign in with GitHub</value>
+  </data>
+  <data name="UserNameEmail.Header" xml:space="preserve">
     <value>username or email</value>
   </data>
 </root>

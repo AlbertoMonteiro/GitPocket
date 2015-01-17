@@ -18,16 +18,22 @@
   <data name="LoginIn.Text" xml:space="preserve">
     <value>Entrando</value>
   </data>
-  <data name="Password.Text" xml:space="preserve">
-    <value>senha</value>
-  </data>
-  <data name="SignIn.Text" xml:space="preserve">
+  <data name="SignInHeader.Header" xml:space="preserve">
     <value>faça login no GitHub</value>
   </data>
-  <data name="SignInButton.Content" xml:space="preserve">
+  <data name="UserNameEmail.Header" xml:space="preserve">
+    <value>usuário ou email</value>
+  </data>
+  <data name="SignInText.Text" xml:space="preserve">
+    <value>faça login no GitHub</value>
+  </data>
+  <data name="SignInButtonContent.Content" xml:space="preserve">
     <value>entrar</value>
   </data>
-  <data name="UserNameEmail.Text" xml:space="preserve">
-    <value>usuário ou email</value>
+  <data name="SignInButtonText.Text" xml:space="preserve">
+    <value>entrar</value>
+  </data>
+  <data name="PasswordHeader.Header" xml:space="preserve">
+    <value>senha</value>
   </data>
 </root>

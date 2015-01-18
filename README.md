@@ -32,6 +32,7 @@ Feel free to participate, comment, report bug or ask for new functionalities.
     git checkout master
     
 (7)Code and then commit!!!
+
 (8)Sync your main-master repository
 
     git checkout main-master

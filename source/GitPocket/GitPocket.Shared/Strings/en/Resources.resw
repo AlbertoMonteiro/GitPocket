@@ -121,7 +121,7 @@
     <value>GitPocket</value>
   </data>
   <data name="LoginIn.Text" xml:space="preserve">
-    <value>Login In</value>
+    <value>Logging in</value>
   </data>
   <data name="PasswordHeader.Header" xml:space="preserve">
     <value>password</value>
@@ -139,6 +139,6 @@
     <value>Sign in with GitHub</value>
   </data>
   <data name="UserNameEmail.Header" xml:space="preserve">
-    <value>Username or Email</value>
+    <value>Email</value>
   </data>
 </root>

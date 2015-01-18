@@ -79,7 +79,7 @@
                     Opacity="0">
             <TextBox TextWrapping="Wrap"
                      x:Uid="UserNameEmail"
-                     Header="Username or Email"
+                     Header="Email"
                      VerticalAlignment="Stretch"
                      BorderThickness="2.5"
                      Margin="0,5" />

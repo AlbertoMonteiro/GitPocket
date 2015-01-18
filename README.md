@@ -15,6 +15,7 @@ Feel free to participate, comment, report bug or ask for new functionalities.
 ### Contributing
 
 (1)You need create a fork, (2)then clone your fork.
+
 (3)Add another remote address of main repository in your local fork using this command:
 
     git remote add main git@github.com:GitPocket/GitPocket.git

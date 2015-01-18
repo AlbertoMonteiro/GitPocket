@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Colors-->
+    <Color x:Key="HeaderTextColor">#BF515151</Color>
+    <Color x:Key="ButtonBackgroundColor">#FF4183C4</Color>
+    <Color x:Key="AppAccentColor">#4184BF</Color>
+    <Color x:Key="AppBusyIndicatorColor">#BFFFFFFF</Color>
+
+    <!--Brushes-->
+    <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
+                     Color="#CCFFFFFF" />
+    
+    <SolidColorBrush x:Key="HeaderTextBrush"
+                     Color="{StaticResource HeaderTextColor}" />
+    
+    <SolidColorBrush x:Key="BusyIndicatorTextBrush"
+                     Color="{StaticResource AppBusyIndicatorColor}" />    
+    
+    <SolidColorBrush x:Key="ButtonBackgroundBrush"
+                     Color="{StaticResource ButtonBackgroundColor}" />
+
+    <SolidColorBrush x:Key="PhoneAccentBrush"
+                     Color="{StaticResource AppAccentColor}" />
+
+</ResourceDictionary>

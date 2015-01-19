@@ -2,7 +2,7 @@
 
 namespace GitPocket.Business
 {
-    public class Translation
+    public static class Translation
     {
         public static string GetTranslation(string key)
         {

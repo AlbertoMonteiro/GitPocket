@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
 namespace GitPocket.Test
 {
@@ -7,9 +6,8 @@ namespace GitPocket.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void HelloWorldTest()
+        public void TestMethod1()
         {
-            Assert.IsTrue(true);
         }
     }
 }

@@ -1,6 +1,8 @@
 using System;
 using Windows.UI.ViewManagement;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using GitPocket.ViewModel;
 
 namespace GitPocket
 {
@@ -38,6 +40,16 @@ namespace GitPocket
 
             await statusBar.HideAsync(); 
 #endif
+            var mainViewModel = (MainViewModel)DataContext;
+
+            mainViewModel.PropertyChanged += (o, p) =>
+            {
+                if (p.PropertyName == "State")
+                {
+                    var viewModel = (MainViewModel)o;
+                    VisualStateManager.GoToState(this, viewModel.State, true);
+                }
+            };
         }
     }
 }

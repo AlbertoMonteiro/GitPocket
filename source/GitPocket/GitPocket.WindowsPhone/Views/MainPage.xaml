@@ -8,7 +8,7 @@
       x:Class="GitPocket.MainPage"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-      Loaded="Page_Loaded">
+      Loaded="Page_Loaded" DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -82,7 +82,7 @@
                      Header="Email"
                      VerticalAlignment="Stretch"
                      BorderThickness="2.5"
-                     Margin="0,5" />
+                     Margin="0,5" Text="{Binding UserName, Mode=TwoWay}" />
         </StackPanel>
         <StackPanel x:Name="StackPanel1"
                     Grid.Row="2"
@@ -93,7 +93,7 @@
                          Header="Password"
                          VerticalAlignment="Stretch"
                          Margin="0,5"
-                         PlaceholderText="" />
+                         PlaceholderText="" Password="{Binding Password}" />
         </StackPanel>
         <Button x:Name="Button" x:Uid="SignInButtonContent" Content="ssflfflflfflflfl" HorizontalAlignment="Stretch"
                 Grid.Row="3"
@@ -102,6 +102,7 @@
             <interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:GoToStateAction StateName="LoginIn" />
+                    <Core:InvokeCommandAction Command="{Binding OnLogin}"/>
                 </Core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>

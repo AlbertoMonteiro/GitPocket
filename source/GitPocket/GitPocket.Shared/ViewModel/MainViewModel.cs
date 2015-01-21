@@ -1,21 +1,22 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
 namespace GitPocket.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        string userName;
+        private string password;
+        private string userName;
 
         public MainViewModel()
         {
             if (IsInDesignMode || IsInDesignModeStatic)
-            {
                 UserName = "email@email.com";
-            }
             else
-            {
-                UserName = "empty";                
-            }
+                UserName = "empty";
+
+            OnLogin = new RelayCommand(Login);
         }
 
         public string UserName
@@ -26,6 +27,23 @@ namespace GitPocket.ViewModel
                 userName = value;
                 RaisePropertyChanged();
             }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public RelayCommand OnLogin { get; set; }
+
+        private void Login()
+        {
+            throw new NotImplementedException();
         }
     }
 }

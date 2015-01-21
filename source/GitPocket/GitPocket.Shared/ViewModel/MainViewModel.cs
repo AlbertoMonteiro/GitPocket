@@ -1,22 +1,25 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GitPocket.Business;
 
 namespace GitPocket.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        private readonly IAuthentication authentication;
         private string password;
         private string userName;
 
-        public MainViewModel()
+        public MainViewModel(IAuthentication authentication)
         {
+            this.authentication = authentication;
             if (IsInDesignMode || IsInDesignModeStatic)
                 UserName = "email@email.com";
             else
                 UserName = "empty";
 
-            OnLogin = new RelayCommand(Login);
+            OnLogin = new RelayCommand(() => Login());
         }
 
         public string UserName
@@ -41,9 +44,11 @@ namespace GitPocket.ViewModel
 
         public RelayCommand OnLogin { get; set; }
 
-        private void Login()
+        private async Task Login()
         {
-            throw new NotImplementedException();
+            var gitHubClient = await authentication.Login(UserName, Password);
+            var user = await gitHubClient.User.Current();
+            UserName = user.Name;
         }
     }
 }

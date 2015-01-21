@@ -114,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationTest.cs" />
+    <Compile Include="Mocks\IMock.cs" />
+    <Compile Include="Mocks\MockConnection.cs" />
+    <Compile Include="Mocks\MockGitHubClient.cs" />
+    <Compile Include="Mocks\MockUsersClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

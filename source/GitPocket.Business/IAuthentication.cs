@@ -1,4 +1,7 @@
-﻿namespace GitPocket.Business
+﻿using System.Threading.Tasks;
+using Octokit;
+
+namespace GitPocket.Business
 {
     public interface IAuthentication
     {
@@ -13,7 +16,7 @@
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
-        void Login(string email, string password);
+        Task<IGitHubClient> Login(string email, string password);
 
         /// <summary>
         ///     Logout and clear the cache

@@ -1,4 +1,7 @@
-﻿using Windows.Storage;
+﻿using System.Threading.Tasks;
+using Octokit;
+using Octokit.Internal;
+using Windows.Storage;
 
 namespace GitPocket.Business
 {
@@ -7,9 +10,11 @@ namespace GitPocket.Business
         private const string EMAIL = "email";
         private const string PASSWORD = "password";
         private readonly ApplicationDataContainer roamingSettings;
+        private readonly ProductHeaderValue productInformation;
 
-        public Authentication()
+        public Authentication(ProductHeaderValue productInformation)
         {
+            this.productInformation = productInformation;
             roamingSettings = ApplicationData.Current.RoamingSettings; // how we should store the login data
         }
 
@@ -24,17 +29,21 @@ namespace GitPocket.Business
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
-        public void Login(string email, string password)
+        public async Task<IGitHubClient> Login(string email, string password)
         {
             Email = email;
             Password = password;
 
             // Log the user in then store the login data if successful
+            var connection = new Connection(productInformation, new InMemoryCredentialStore(new Credentials(email, password)));
+            var gitHubClient = new GitHubClient(connection);
+            await gitHubClient.User.Current();
 
             roamingSettings.Values[EMAIL] = email;
             roamingSettings.Values[PASSWORD] = password;
 
             IsAuthenticated = true;
+            return gitHubClient;
         }
 
         /// <summary>

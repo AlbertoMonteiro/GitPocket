@@ -1,6 +1,8 @@
 using GalaSoft.MvvmLight;
+using GitPocket.Business;
 using GitPocket.IoC;
 using Microsoft.Practices.ServiceLocation;
+using Octokit;
 
 namespace GitPocket.ViewModel
 {
@@ -22,6 +24,8 @@ namespace GitPocket.ViewModel
             }
 
             NinjectServiceLocator.Default.Bind<MainViewModel>().ToSelf();
+            NinjectServiceLocator.Default.Bind<IAuthentication>().To<Authentication>();
+            NinjectServiceLocator.Default.Bind<ProductHeaderValue>().ToConstant(new ProductHeaderValue("GitPocket"));
         }
 
         public static MainViewModel Main

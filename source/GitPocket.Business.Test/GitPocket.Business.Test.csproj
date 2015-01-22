@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{98C717BE-54DC-4A64-9D34-986FB49CCDBD}</ProjectGuid>
+    <ProjectGuid>{36FA3F87-50BE-4A4C-AF58-47C89A0FE2DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GitPocket.Business.Test</RootNamespace>
@@ -128,16 +128,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GitPocket.Business\GitPocket.Business.csproj">
-      <Project>{e9f621c0-5fcb-4a46-8649-476f5cadae6d}</Project>
-      <Name>GitPocket.Business</Name>
-    </ProjectReference>
+    <Reference Include="Octokit">
+      <HintPath>..\packages\Octokit.0.6.2\lib\netcore45\Octokit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Octokit, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Octokit.0.6.2\lib\portable-net45+wp80+win+wpa81\Octokit.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\GitPocket.Business\GitPocket.Business.csproj">
+      <Project>{d59cd6cc-bb82-402a-88ed-5ec894c10620}</Project>
+      <Name>GitPocket.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

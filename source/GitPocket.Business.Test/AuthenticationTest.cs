@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using GitPocket.Business.Test.Mocks;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using Octokit;
 using Windows.Storage;

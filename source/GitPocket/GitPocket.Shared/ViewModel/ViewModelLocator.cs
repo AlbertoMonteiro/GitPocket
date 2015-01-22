@@ -1,32 +1,60 @@
+/*
+  In App.xaml:
+  <Application.Resources>
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:GitPocket"
+                           x:Key="Locator" />
+  </Application.Resources>
+  
+  In the View:
+  DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
+
+  You can also use Blend to do all this with the tool's support.
+  See http://www.galasoft.ch/mvvm
+*/
+
 using GalaSoft.MvvmLight;
-using GitPocket.IoC;
+using GalaSoft.MvvmLight.Ioc;
+using GitPocket.Business;
 using Microsoft.Practices.ServiceLocation;
+using Octokit;
 
 namespace GitPocket.ViewModel
 {
+    /// <summary>
+    /// This class contains static references to all the view models in the
+    /// application and provides an entry point for the bindings.
+    /// </summary>
     public class ViewModelLocator
     {
+        /// <summary>
+        /// Initializes a new instance of the ViewModelLocator class.
+        /// </summary>
         public ViewModelLocator()
         {
-            ServiceLocator.SetLocatorProvider(() => NinjectServiceLocator.Default);
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            if (ViewModelBase.IsInDesignModeStatic)
-            {
-                // Create design time view services and models
-                //SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            }
-            else
-            {
-                // Create run time view services and models
-                //SimpleIoc.Default.Register<IDataService, DataService>();
-            }
+            ////if (ViewModelBase.IsInDesignModeStatic)
+            ////{
+            ////    // Create design time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            ////}
+            ////else
+            ////{
+            ////    // Create run time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DataService>();
+            ////}
 
-            NinjectServiceLocator.Default.Bind<MainViewModel>().ToSelf();
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register(() => new ProductHeaderValue("GitPocket"));
+            SimpleIoc.Default.Register<IAuthentication, Authentication>();
         }
 
-        public static MainViewModel Main
+        public MainViewModel Main
         {
-            get { return ServiceLocator.Current.GetInstance<MainViewModel>(); }
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
         }
         
         public static void Cleanup()

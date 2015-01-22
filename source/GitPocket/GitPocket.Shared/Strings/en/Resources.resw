@@ -121,7 +121,7 @@
     <value>GitPocket</value>
   </data>
   <data name="LoginIn.Text" xml:space="preserve">
-    <value>Logging in</value>
+    <value>Logging In</value>
   </data>
   <data name="PasswordHeader.Header" xml:space="preserve">
     <value>password</value>

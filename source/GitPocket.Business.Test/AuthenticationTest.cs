@@ -1,49 +1,52 @@
-﻿using Windows.Storage;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using Octokit;
+using Windows.Storage;
 
 namespace GitPocket.Business.Test
 {
     [TestClass]
     public class AuthenticationTest
     {
+        private Authentication auth;
         private const string EMAIL = "mail@mail.com";
         private const string PASSWORD = "123456";
 
-        [TestMethod]
-        public void WhenUserLoginInHeShouldBeAuthenticated()
+        [TestInitialize]
+        public void SetUp()
         {
-            var auth = new Authentication();
+            /*IConnection connection = new MockConnection();
+            IGitHubClient client = new MockGitHubClient();*/
+            auth = new Authentication(new ProductHeaderValue("GitPocket"));
+        }
 
-            auth.Login(EMAIL, PASSWORD);
-
+        [TestMethod]
+        public async Task WhenUserLoginInHeShouldBeAuthenticated()
+        {
+            await auth.Login(EMAIL, PASSWORD);
+            
             Assert.IsTrue(auth.IsAuthenticated);
         }
 
         [TestMethod]
-        public void WhenUserLoginInEmailRoamingSettingsShouldBeStored()
+        public async Task WhenUserLoginInEmailRoamingSettingsShouldBeStored()
         {
-            var auth = new Authentication();
-
-            auth.Login(EMAIL, PASSWORD);
+            await auth.Login(EMAIL, PASSWORD);
 
             Assert.AreEqual(EMAIL, ApplicationData.Current.RoamingSettings.Values["email"]);
         }
 
         [TestMethod]
-        public void WhenUserLoginInPasswordRoamingSettingsShouldBeStored()
+        public async Task WhenUserLoginInPasswordRoamingSettingsShouldBeStored()
         {
-            var auth = new Authentication();
-
-            auth.Login(EMAIL, PASSWORD);
+            await auth.Login(EMAIL, PASSWORD);
 
             Assert.AreEqual(PASSWORD, ApplicationData.Current.RoamingSettings.Values["password"]);
         }
 
         [TestMethod]
-        public void WhenUserLogoutHeShouldBeAuthenticated()
+        public async Task WhenUserLogoutHeShouldBeAuthenticated()
         {
-            var auth = new Authentication();
-
             auth.Logout();
 
             Assert.IsFalse(auth.IsAuthenticated);

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
-  <Identity Name="21af94ce-b9c7-4b5e-98e1-f088424542b0"
-            Publisher="CN=Alberto Monteiro"
+  <Identity Name="7d82aad9-dae4-4821-8790-aec142d383b1"
+            Publisher="CN=Alberto"
             Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>GitPocket.Windows</DisplayName>
-    <PublisherDisplayName>Alberto Monteiro</PublisherDisplayName>
+    <PublisherDisplayName>Alberto</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

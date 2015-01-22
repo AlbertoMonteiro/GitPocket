@@ -1,13 +1,11 @@
 <Application x:Class="GitPocket.App" 
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:viewModel="using:GitPocket.ViewModel"
              xmlns:themeManagerRt="using:ThemeManagerRt">
     <Application.Resources>
         <ResourceDictionary>
-            <viewModel:ViewModelLocator x:Key="Locator" />
+            <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:GitPocket.ViewModel" />
             <themeManagerRt:ThemeManager x:Key="ThemeManager" />
-
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Dark">
                     <ResourceDictionary.MergedDictionaries>

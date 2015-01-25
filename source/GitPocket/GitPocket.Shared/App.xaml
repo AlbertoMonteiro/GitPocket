@@ -5,6 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:GitPocket.ViewModel" />
+            <FontFamily x:Key="Octicons">/Assets/octicons.ttf</FontFamily>
             <themeManagerRt:ThemeManager x:Key="ThemeManager" />
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Dark">
